@@ -1,0 +1,8 @@
+Requirements :-
+Python
+MediaPipe Holistic
+OpenCV
+TensorFlow Keras
+NumPy
+Sklearn
+Matplotlib
