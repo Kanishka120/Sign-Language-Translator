@@ -7,16 +7,16 @@ import mediapipe as mp
 mp_holi = mp.solutions.holistic
 mp_draw = mp.solutions.drawing_utils
 
-# Define the ISL actions and data collection parameters
+# Define the BSL actions and data collection parameters
 bsl_actions = np.array(['Hello', 'ThankYou', 'I Love You', 'Yes', 'No', 'Good Morning'])
 no_sequence = 30  # Number of sequences to collect per action
 seq_len = 30  # Frames per sequence
 
-# Path for ISL data storage
+# Path for BSL data storage
 BSL_DATA_PATH = os.path.join('Data', 'BSL')
 os.makedirs(BSL_DATA_PATH, exist_ok=True)
 
-# Ensure directories are created for ISL actions
+# Ensure directories are created for BSL actions
 for action in bsl_actions:
     for seq in range(no_sequence):
         try:
@@ -40,7 +40,7 @@ def extract_keypoints(result):
     rh = np.array([[res.x, res.y, res.z] for res in result.right_hand_landmarks.landmark]).flatten() if result.right_hand_landmarks else np.zeros(21 * 3)
     return np.concatenate([pose, lh, rh])
 
-# Data collection for ISL
+# Data collection for BSL
 cap = cv2.VideoCapture(0)
 with mp_holi.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
     for action in bsl_actions:
