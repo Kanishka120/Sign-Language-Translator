@@ -8,7 +8,7 @@ import cv2
 # isl_actions = ['Namaste', 'ThankYou', 'I Love You', 'Yes', 'No', 'Good Morning']
 # bsl_actions = ['Hello', 'ThankYou', 'I Love You', 'Yes', 'No', 'Good Morning']
 
-# # ISL to BSL mapping (this is just an example, adjust the mapping as per actual correspondence)
+# # ISL to BSL mapping 
 # isl_to_bsl_mapping = {
 #     'Namaste': 'Hello',
 #     'ThankYou': 'ThankYou',
